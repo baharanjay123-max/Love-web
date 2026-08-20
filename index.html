@@ -1,4 +1,1646 @@
-cat index.html
-git add index.html
-git commit -m "hapus isi index"
-git push
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#050208">
+
+<title>UNTUK KAMU — BY BRUHH ☠️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:#050208;
+    color:white;
+    font-family:Georgia,serif;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,45,120,.18),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(160,30,100,.12),
+            transparent 35%
+        ),
+        #050208;
+}
+
+/* ================= LOADER ================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#030303;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    transition:1s;
+}
+
+.loader.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.loader-logo{
+    font-family:Arial,sans-serif;
+    font-weight:900;
+    font-size:43px;
+    letter-spacing:5px;
+}
+
+.loader-logo span{
+    color:#ff3d7d;
+}
+
+.loader-small{
+    margin-top:18px;
+    color:#666;
+    font-family:Arial,sans-serif;
+    font-size:8px;
+    letter-spacing:5px;
+}
+
+.loader-line{
+    width:170px;
+    height:2px;
+    background:#21131a;
+    margin-top:25px;
+    overflow:hidden;
+}
+
+.loader-line::after{
+    content:"";
+    display:block;
+    width:0;
+    height:100%;
+    background:#ff3d7d;
+    box-shadow:0 0 15px #ff3d7d;
+    animation:load 2.3s forwards;
+}
+
+@keyframes load{
+    to{
+        width:100%;
+    }
+}
+
+/* ================= STORY ================= */
+
+.story{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+/* ================= SCENE ================= */
+
+.scene{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        90px 25px 110px;
+
+    text-align:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:
+        scale(1.08)
+        translateY(20px);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.16,1,.3,1);
+
+    pointer-events:none;
+}
+
+.scene.active{
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        scale(1)
+        translateY(0);
+
+    pointer-events:auto;
+}
+
+.scene.exit{
+    opacity:0;
+
+    transform:
+        scale(.92)
+        translateY(-20px);
+}
+
+/* ================= SCENE CONTENT ================= */
+
+.content{
+    width:100%;
+    max-width:800px;
+}
+
+.small{
+    font-family:Arial,sans-serif;
+    font-size:8px;
+    letter-spacing:7px;
+    color:#ff3d7d;
+    margin-bottom:25px;
+}
+
+.title{
+    font-family:Arial,sans-serif;
+
+    font-size:
+        clamp(
+            55px,
+            15vw,
+            120px
+        );
+
+    line-height:.82;
+
+    font-weight:900;
+
+    letter-spacing:-7px;
+}
+
+.title span{
+    color:#ff3d7d;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,61,125,.7),
+
+        0 0 70px
+        rgba(255,61,125,.3);
+}
+
+.text{
+    margin:
+        35px auto 0;
+
+    max-width:650px;
+
+    color:#aaa;
+
+    font-size:17px;
+
+    line-height:2;
+}
+
+.quote{
+    margin:
+        40px auto 0;
+
+    max-width:700px;
+
+    font-size:
+        clamp(
+            25px,
+            6vw,
+            50px
+        );
+
+    line-height:1.35;
+
+    font-weight:bold;
+}
+
+.quote span{
+    color:#ff3d7d;
+}
+
+/* ================= START ================= */
+
+.start-heart{
+    font-size:90px;
+
+    color:#ff3d7d;
+
+    margin-bottom:25px;
+
+    animation:
+        heartbeat 1.5s infinite;
+
+    text-shadow:
+        0 0 40px
+        rgba(255,61,125,.6);
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+
+}
+
+/* ================= PHOTO ================= */
+
+.photo-wrap{
+    width:100%;
+    max-width:430px;
+
+    margin:
+        0 auto 30px;
+
+    position:relative;
+}
+
+.photo-wrap img{
+    width:100%;
+    height:52vh;
+    max-height:560px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.5);
+
+    filter:
+        brightness(.85)
+        saturate(.9);
+
+    transition:1s;
+}
+
+.photo-wrap::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            transparent 55%,
+            rgba(0,0,0,.5)
+        );
+
+    pointer-events:none;
+}
+
+/* ================= REASONS ================= */
+
+.reasons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+
+    max-width:850px;
+
+    margin:35px auto;
+}
+
+.reason{
+    padding:25px 15px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.reason .num{
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:#ff3d7d;
+}
+
+.reason h3{
+    margin-top:18px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:18px;
+}
+
+.reason p{
+    margin-top:10px;
+
+    color:#777;
+
+    line-height:1.6;
+
+    font-size:13px;
+}
+
+/* ================= FINAL ================= */
+
+.final-heart{
+    font-size:
+        clamp(
+            80px,
+            20vw,
+            150px
+        );
+
+    color:#ff3d7d;
+
+    text-shadow:
+        0 0 60px
+        rgba(255,61,125,.6);
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.signature{
+    margin-top:55px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:#777;
+}
+
+.signature strong{
+    color:#ff3d7d;
+}
+
+/* ================= BUTTON ================= */
+
+.next{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:100;
+
+    min-width:180px;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    background:
+        rgba(20,5,12,.7);
+
+    backdrop-filter:
+        blur(15px);
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.next:hover{
+    background:#ff3d7d;
+
+    border-color:#ff3d7d;
+
+    box-shadow:
+        0 0 30px
+        rgba(255,61,125,.5);
+}
+
+.next:active{
+    transform:
+        translateX(-50%)
+        scale(.94);
+}
+
+/* ================= PROGRESS ================= */
+
+.progress{
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    z-index:100;
+
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:#666;
+}
+
+.progress span{
+    color:#ff3d7d;
+}
+
+/* ================= MUSIC ================= */
+
+.music{
+    position:fixed;
+
+    top:22px;
+    left:22px;
+
+    z-index:200;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        rgba(15,5,10,.7);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(15px);
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.music.playing{
+    animation:
+        musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+
+    50%{
+        box-shadow:
+            0 0 30px
+            rgba(255,61,125,.5);
+    }
+
+}
+
+/* ================= HINT ================= */
+
+.hint{
+    position:fixed;
+
+    bottom:92px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    color:#555;
+
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+    z-index:50;
+
+    animation:
+        hint 2s infinite;
+}
+
+@keyframes hint{
+
+    50%{
+        opacity:.35;
+        transform:
+            translateX(-50%)
+            translateY(5px);
+    }
+
+}
+
+/* ================= HEART PARTICLES ================= */
+
+.heart{
+    position:fixed;
+
+    bottom:-40px;
+
+    color:#ff3d7d;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    animation:
+        floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(.5);
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.2);
+    }
+
+}
+
+/* ================= TAP EFFECT ================= */
+
+.tap-heart{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    color:#ff3d7d;
+
+    font-size:20px;
+
+    animation:
+        tapHeart .9s forwards;
+}
+
+@keyframes tapHeart{
+
+    0%{
+        opacity:1;
+        transform:
+            translate(-50%,-50%)
+            scale(.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    .scene{
+        padding:
+            80px 20px 105px;
+    }
+
+    .text{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .reasons{
+        grid-template-columns:1fr;
+
+        max-width:350px;
+
+        margin-top:25px;
+    }
+
+    .reason{
+        padding:18px;
+    }
+
+    .reason h3{
+        margin-top:8px;
+    }
+
+    .reason p{
+        margin-top:5px;
+    }
+
+    .photo-wrap img{
+        height:48vh;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= LOADER ================= -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-logo">
+        BRUHH<span>☠️</span>
+    </div>
+
+    <div class="loader-small">
+        SOMETHING SPECIAL
+    </div>
+
+    <div class="loader-line"></div>
+
+</div>
+
+
+<!-- ================= MUSIC ================= -->
+
+<audio
+    id="music"
+    loop
+    preload="auto">
+
+    <source
+        src="https://cdn.pixabay.com/audio/2022/10/30/audio_9468a3c7b4.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- ================= MUSIC BUTTON ================= -->
+
+<div
+    class="music"
+    id="musicBtn">
+
+    ♪
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="progress">
+
+    <span id="current">
+        01
+    </span>
+
+    /
+
+    <span id="total">
+        08
+    </span>
+
+</div>
+
+
+<!-- ================= STORY ================= -->
+
+<main class="story">
+
+
+<!-- SCENE 1 -->
+
+<section
+class="scene active"
+data-scene="1">
+
+<div class="content">
+
+    <div class="start-heart">
+        ♥
+    </div>
+
+    <div class="small">
+        A LITTLE SOMETHING
+    </div>
+
+    <div class="title">
+
+        UNTUK<br>
+
+        <span>KAMU.</span>
+
+    </div>
+
+    <p class="text">
+
+        Ada sesuatu yang ingin aku
+        sampaikan.
+
+        <br><br>
+
+        Jadi kali ini...
+
+        <br>
+
+        jangan di-scroll.
+
+        <br><br>
+
+        Cukup tekan tombolnya.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 2 -->
+
+<section
+class="scene"
+data-scene="2">
+
+<div class="content">
+
+    <div class="small">
+        01 — THE REASON
+    </div>
+
+    <div class="quote">
+
+        Dari sekian banyak orang
+        di dunia...
+
+        <br><br>
+
+        <span>
+        kenapa kamu?
+        </span>
+
+    </div>
+
+    <p class="text">
+
+        Entahlah.
+
+        Mungkin karena ada sesuatu
+        dari dirimu yang tidak bisa
+        dijelaskan hanya dengan kata-kata.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 3 -->
+
+<section
+class="scene"
+data-scene="3">
+
+<div class="content">
+
+    <div class="small">
+        02 — YOUR SMILE
+    </div>
+
+    <div class="quote">
+
+        Aku suka
+        <span>
+        senyummu.
+        </span>
+
+    </div>
+
+    <p class="text">
+
+        Bukan karena senyummu harus
+        sempurna.
+
+        <br><br>
+
+        Tapi karena setiap kali kamu
+        tersenyum, entah kenapa
+        suasana terasa menjadi
+        lebih baik.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 4 -->
+
+<section
+class="scene"
+data-scene="4">
+
+<div class="content">
+
+    <div class="small">
+        03 — LITTLE THINGS
+    </div>
+
+    <div class="quote">
+
+        Ternyata hal kecil
+        tentang seseorang...
+
+        <br><br>
+
+        bisa menjadi
+        <span>
+        sangat berarti.
+        </span>
+
+    </div>
+
+    <p class="text">
+
+        Cara kamu berbicara.
+        Cara kamu tertawa.
+        Cara kamu merespons sesuatu.
+
+        <br><br>
+
+        Hal-hal sederhana yang mungkin
+        menurutmu biasa saja,
+        ternyata bisa menjadi sesuatu
+        yang selalu aku ingat.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 5 FOTO -->
+
+<section
+class="scene"
+data-scene="5">
+
+<div class="content">
+
+    <div class="small">
+        04 — A MEMORY
+    </div>
+
+    <div class="photo-wrap">
+
+        <img
+        src="images/foto1.jpg"
+        alt="Foto kenangan">
+
+    </div>
+
+    <p class="text">
+
+        Beberapa momen memang sederhana.
+
+        <br>
+
+        Tapi ketika bersama orang
+        yang tepat...
+
+        <br>
+
+        momen sederhana pun
+        bisa terasa spesial.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 6 FOTO -->
+
+<section
+class="scene"
+data-scene="6">
+
+<div class="content">
+
+    <div class="small">
+        05 — MORE MEMORIES
+    </div>
+
+    <div class="photo-wrap">
+
+        <img
+        src="images/foto2.jpg"
+        alt="Foto kenangan">
+
+    </div>
+
+    <p class="text">
+
+        Kalau suatu hari nanti kita
+        melihat kembali foto-foto ini,
+
+        <br><br>
+
+        semoga yang kita ingat adalah
+        betapa bahagianya momen itu.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 7 -->
+
+<section
+class="scene"
+data-scene="7">
+
+<div class="content">
+
+    <div class="small">
+        06 — THREE THINGS
+    </div>
+
+    <div class="reasons">
+
+        <div class="reason">
+
+            <div class="num">
+                01
+            </div>
+
+            <h3>
+                Senyummu
+            </h3>
+
+            <p>
+                Selalu punya cara
+                membuat hari terasa
+                lebih cerah.
+            </p>
+
+        </div>
+
+
+        <div class="reason">
+
+            <div class="num">
+                02
+            </div>
+
+            <h3>
+                Hadirmu
+            </h3>
+
+            <p>
+                Membuat hal sederhana
+                terasa lebih berarti.
+            </p>
+
+        </div>
+
+
+        <div class="reason">
+
+            <div class="num">
+                03
+            </div>
+
+            <h3>
+                Kamu
+            </h3>
+
+            <p>
+                Tidak perlu alasan lain.
+                Kamu ya kamu.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SCENE 8 FINAL -->
+
+<section
+class="scene"
+data-scene="8">
+
+<div class="content">
+
+    <div class="final-heart">
+        ♥
+    </div>
+
+    <div class="small">
+        ONE LAST THING
+    </div>
+
+    <div class="quote">
+
+        Kalau ada satu hal yang
+        ingin aku katakan...
+
+        <br><br>
+
+        <span>
+        tetaplah tersenyum.
+        </span>
+
+    </div>
+
+    <p class="text">
+
+        Karena mungkin kamu tidak pernah
+        tahu betapa indahnya dirimu
+        dari sudut pandang seseorang
+        yang menyayangimu.
+
+        <br><br>
+
+        Terima kasih sudah menjadi
+        seseorang yang spesial.
+
+    </p>
+
+    <div class="signature">
+
+        MADE WITH ♥ BY
+
+        <strong>
+            BRUHH ☠️
+        </strong>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= HINT ================= -->
+
+<div
+class="hint"
+id="hint">
+
+    TEKAN UNTUK MELANJUTKAN
+
+</div>
+
+
+<!-- ================= NEXT BUTTON ================= -->
+
+<button
+class="next"
+id="next">
+
+    LANJUT →
+
+</button>
+
+
+<script>
+
+
+/* ================= VARIABLES ================= */
+
+const scenes =
+document.querySelectorAll(".scene");
+
+const next =
+document.getElementById("next");
+
+const current =
+document.getElementById("current");
+
+const hint =
+document.getElementById("hint");
+
+let sceneIndex=0;
+
+const totalScenes=
+scenes.length;
+
+
+/* ================= LOADER ================= */
+
+window.addEventListener(
+"load",
+()=>{
+
+    setTimeout(
+    ()=>{
+
+        document
+        .getElementById("loader")
+        .classList
+        .add("hide");
+
+    },
+    2400);
+
+});
+
+
+/* ================= MUSIC ================= */
+
+const music =
+document.getElementById("music");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+let playing=false;
+
+
+function startMusic(){
+
+    music
+    .play()
+    .then(()=>{
+
+        playing=true;
+
+        musicBtn
+        .classList
+        .add("playing");
+
+    })
+    .catch(()=>{
+
+        console.log(
+            "Musik menunggu interaksi."
+        );
+
+    });
+
+}
+
+
+musicBtn.addEventListener(
+"click",
+(e)=>{
+
+    e.stopPropagation();
+
+    if(playing){
+
+        music.pause();
+
+        playing=false;
+
+        musicBtn
+        .classList
+        .remove("playing");
+
+    }else{
+
+        startMusic();
+
+    }
+
+});
+
+
+/* ================= SHOW SCENE ================= */
+
+function showScene(index){
+
+    if(index<0){
+        index=0;
+    }
+
+    if(index>=totalScenes){
+
+        index=
+            totalScenes-1;
+
+    }
+
+
+    scenes.forEach(
+    (scene,i)=>{
+
+        scene
+        .classList
+        .remove(
+            "active",
+            "exit"
+        );
+
+        if(i<index){
+
+            scene
+            .classList
+            .add("exit");
+
+        }
+
+        if(i===index){
+
+            scene
+            .classList
+            .add("active");
+
+        }
+
+    });
+
+
+    sceneIndex=index;
+
+
+    current.textContent=
+        String(index+1)
+        .padStart(2,"0");
+
+
+    if(index===
+        totalScenes-1){
+
+        next.textContent=
+            "SELESAI ♥";
+
+        hint.textContent=
+            "♥ BY BRUHH ☠️";
+
+    }else{
+
+        next.textContent=
+            "LANJUT →";
+
+        hint.textContent=
+            "TEKAN UNTUK MELANJUTKAN";
+
+    }
+
+}
+
+
+/* ================= NEXT ================= */
+
+function nextScene(){
+
+    startMusic();
+
+    if(sceneIndex<
+       totalScenes-1){
+
+        showScene(
+            sceneIndex+1
+        );
+
+    }else{
+
+        createHeartBurst();
+
+        next.textContent=
+            "♥ TERIMA KASIH";
+
+    }
+
+}
+
+
+next.addEventListener(
+"click",
+(e)=>{
+
+    e.stopPropagation();
+
+    nextScene();
+
+});
+
+
+/* ================= TAP SCREEN ================= */
+
+document.addEventListener(
+"click",
+(e)=>{
+
+    if(
+        e.target.closest(".next") ||
+        e.target.closest(".music")
+    ){
+
+        return;
+
+    }
+
+    createTapHeart(
+        e.clientX,
+        e.clientY
+    );
+
+});
+
+
+/* ================= TAP HEART ================= */
+
+function createTapHeart(x,y){
+
+    const heart=
+        document.createElement("div");
+
+    heart.className=
+        "tap-heart";
+
+    heart.innerHTML=
+        "♥";
+
+    heart.style.left=
+        x+"px";
+
+    heart.style.top=
+        y+"px";
+
+    heart.style.setProperty(
+        "--x",
+        (Math.random()-0.5)*120+"px"
+    );
+
+    heart.style.setProperty(
+        "--y",
+        -60-Math.random()*100+"px"
+    );
+
+    document.body
+        .appendChild(heart);
+
+    setTimeout(
+    ()=>{
+
+        heart.remove();
+
+    },
+    1000);
+
+}
+
+
+/* ================= FLOAT HEARTS ================= */
+
+function createHeart(){
+
+    const heart=
+        document.createElement("div");
+
+    heart.className=
+        "heart";
+
+    const symbols=[
+        "♥",
+        "♡",
+        "❤",
+        "💗",
+        "💖",
+        "✦"
+    ];
+
+    heart.innerHTML=
+        symbols[
+            Math.floor(
+                Math.random()*
+                symbols.length
+            )
+        ];
+
+    heart.style.left=
+        Math.random()*100+"%";
+
+    heart.style.fontSize=
+        10+
+        Math.random()*22+
+        "px";
+
+    heart.style.animationDuration=
+        6+
+        Math.random()*8+
+        "s";
+
+    document.body
+        .appendChild(heart);
+
+    setTimeout(
+    ()=>{
+
+        heart.remove();
+
+    },
+    15000);
+
+}
+
+
+setInterval(
+    createHeart,
+    800
+);
+
+
+/* ================= FINAL BURST ================= */
+
+function createHeartBurst(){
+
+    for(
+        let i=0;
+        i<30;
+        i++
+    ){
+
+        setTimeout(
+        ()=>{
+
+            createTapHeart(
+                window.innerWidth/2+
+                (Math.random()-.5)*250,
+
+                window.innerHeight/2+
+                (Math.random()-.5)*250
+            );
+
+        },
+        i*40);
+
+    }
+
+}
+
+
+/* ================= SWIPE ================= */
+
+let startY=0;
+
+document.addEventListener(
+"touchstart",
+(e)=>{
+
+    startY=
+        e.touches[0].clientY;
+
+},
+{
+    passive:true
+});
+
+
+document.addEventListener(
+"touchend",
+(e)=>{
+
+    const endY=
+        e.changedTouches[0].clientY;
+
+    const difference=
+        startY-endY;
+
+    /*
+       Sedikit swipe ke atas juga
+       bisa lanjut ke scene berikutnya.
+    */
+
+    if(difference>80){
+
+        nextScene();
+
+    }
+
+},
+{
+    passive:true
+});
+
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener(
+"keydown",
+(e)=>{
+
+    if(
+        e.key==="ArrowRight" ||
+        e.key==="Enter" ||
+        e.key===" "
+    ){
+
+        nextScene();
+
+    }
+
+    if(
+        e.key==="ArrowLeft"
+    ){
+
+        showScene(
+            sceneIndex-1
+        );
+
+    }
+
+});
+
+
+/* ================= INITIAL ================= */
+
+showScene(0);
+
+</script>
+
+</body>
+</html>
